@@ -22,10 +22,15 @@ kotlin {
 
         /*
          * https://youtrack.jetbrains.com/issue/KT-41830/
-         * Only link against pods the library (lorem-ipsum) depends on.
+         * Only link against pods the library (lorem-ipsum and google-maps) depends on.
          */
         pod("LoremIpsum") {
-            version = "~> 1.0"
+            version = libs.versions.cocoapods.loremIpsum.get()
+            linkOnly = true
+        }
+
+        pod("GoogleMaps") {
+            version = libs.versions.cocoapods.googleMaps.get()
             linkOnly = true
         }
 
@@ -44,6 +49,7 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(projects.loremIpsum)
+            implementation(projects.googleMaps)
         }
 
         all {

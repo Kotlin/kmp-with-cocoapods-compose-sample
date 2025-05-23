@@ -9,7 +9,8 @@ Pod::Spec.new do |spec|
     spec.vendored_frameworks      = 'build/cocoapods/framework/ComposeApp.framework'
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '16.6'
-    spec.dependency 'LoremIpsum', '~> 1.0'
+    spec.dependency 'GoogleMaps', '10.0.0'
+    spec.dependency 'LoremIpsum', '1.0'
                 
     if !Dir.exist?('build/cocoapods/framework/ComposeApp.framework') || Dir.empty?('build/cocoapods/framework/ComposeApp.framework')
         raise "
