@@ -1,18 +1,18 @@
 package org.jetbrains.kotlin.lorem
 
-import cocoapods.LoremIpsum.LoremIpsum
+import swiftPMImport.org.jetbrains.kotlin.lorem.ipsum.lorem.ipsum.LoremIpsum
 
 class Ipsum {
 
     fun name(): String {
-        return LoremIpsum.name().orEmpty()
+        return LoremIpsum.name()
     }
 
     fun sentence(): String {
-        return LoremIpsum.sentence().orEmpty()
+        return LoremIpsum.sentence()
     }
 
     fun word(): String {
-        return LoremIpsum.word().orEmpty()
+        return LoremIpsum.word()
     }
 }

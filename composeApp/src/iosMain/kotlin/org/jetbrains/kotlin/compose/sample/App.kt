@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import cocoapods.GoogleMaps.GMSServices
+import swiftPMImport.org.jetbrains.kotlin.google.maps.google.maps.GMSServices
 import org.jetbrains.compose.resources.painterResource
 
 import org.jetbrains.kotlin.compose.sample.composeapp.generated.resources.Res

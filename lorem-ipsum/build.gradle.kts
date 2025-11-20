@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "org.jetbrains.kotlin.lorem-ipsum"
@@ -10,16 +9,14 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
-    cocoapods {
-        summary = "Kotlin lorem-ipsum module with cocoapods dependencies"
-        ios.deploymentTarget = "16.6"
+    swiftPMDependencies {
+        iosDeploymentVersion.set("16.0")
 
-        // We don't need a podspec for a module dependency
-        noPodspec()
-
-        pod("LoremIpsum") {
-            version = libs.versions.cocoapods.loremIpsum.get()
-        }
+        `package`(
+            url = url("https://github.com/lukaskubanek/LoremIpsum.git"),
+            version = from(libs.versions.spm.loremIpsum.get()),
+            products = listOf(product("LoremIpsum")),
+        )
     }
 
     sourceSets.all {

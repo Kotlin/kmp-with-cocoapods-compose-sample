@@ -1,8 +1,9 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "org.jetbrains.kotlin.compose.sample"
@@ -12,32 +13,12 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
-    cocoapods {
-        summary = "Kotlin sample project with CocoaPods Compose dependencies"
-        homepage = "https://github.com/Kotlin/kotlin-with-cocoapods-compose-sample"
+    swiftPMDependencies {
+        iosDeploymentVersion.set("16.0")
 
-        podfile = project.file("../iosApp/Podfile")
-
-        ios.deploymentTarget = "16.6"
-
-        /*
-         * https://youtrack.jetbrains.com/issue/KT-41830/
-         * Only link against pods the library (lorem-ipsum and google-maps) depends on.
-         */
-        pod("LoremIpsum") {
-            version = libs.versions.cocoapods.loremIpsum.get()
-            linkOnly = true
-        }
-
-        pod("GoogleMaps") {
-            version = libs.versions.cocoapods.googleMaps.get()
-            linkOnly = true
-        }
-
-        framework {
-            baseName = "ComposeApp"
-            isStatic = true
-        }
+        xcodeProjectPathForKmpIJPlugin.set(
+            layout.projectDirectory.file("../iosApp/iosApp.xcodeproj")
+        )
     }
 
     sourceSets {
@@ -51,13 +32,25 @@ kotlin {
             implementation(projects.loremIpsum)
             implementation(projects.googleMaps)
         }
+    }
 
-        all {
-            languageSettings {
-                optIn("kotlinx.cinterop.ExperimentalForeignApi")
-            }
+    sourceSets.all {
+        languageSettings {
+            optIn("kotlinx.cinterop.ExperimentalForeignApi")
         }
     }
+
+    targets
+        .withType<KotlinNativeTarget>()
+        .matching { it.konanTarget.family.isAppleFamily }
+        .configureEach {
+            binaries {
+                framework {
+                    baseName = "ComposeApp"
+                    isStatic = true
+                }
+            }
+        }
 }
 
 

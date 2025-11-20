@@ -1,8 +1,8 @@
 package org.jetbrains.kotlin.google.maps
 
-import cocoapods.GoogleMaps.GMSCameraPosition
-import cocoapods.GoogleMaps.GMSMapView
-import cocoapods.GoogleMaps.GMSMarker
+import swiftPMImport.org.jetbrains.kotlin.google.maps.google.maps.GMSCameraPosition
+import swiftPMImport.org.jetbrains.kotlin.google.maps.google.maps.GMSMapView
+import swiftPMImport.org.jetbrains.kotlin.google.maps.google.maps.GMSMarker
 import kotlinx.cinterop.readValue
 import platform.CoreGraphics.CGRectZero
 import platform.CoreLocation.CLLocationCoordinate2DMake

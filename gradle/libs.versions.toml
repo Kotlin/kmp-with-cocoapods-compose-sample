@@ -1,12 +1,11 @@
 [versions]
-compose-multiplatform = "1.10.3"
-kotlin = "2.3.20"
-cocoapods-LoremIpsum = "2.0.0"
-cocoapods-GoogleMaps = "10.3.0"
+compose-multiplatform = "1.9.3"
+kotlin = "2.2.21-titan-205"
+spm-LoremIpsum = "2.0.1"
+spm-GoogleMaps = "10.6.0"
 
 [plugins]
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
 

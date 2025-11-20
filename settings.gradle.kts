@@ -1,4 +1,4 @@
-rootProject.name = "kmp-with-cocoapods-compose-sample"
+rootProject.name = "kmp-with-spm-compose-sample"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -12,6 +12,7 @@ pluginManagement {
         }
         gradlePluginPortal()
         mavenCentral()
+        maven("https://packages.jetbrains.team/maven/p/kt/dev")
     }
 }
 
@@ -25,6 +26,7 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven("https://packages.jetbrains.team/maven/p/kt/dev")
     }
 }
 
