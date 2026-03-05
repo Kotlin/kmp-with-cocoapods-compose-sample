@@ -1,3 +1,7 @@
+@file:OptIn(ExperimentalKotlinGradlePluginApi::class)
+
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
 }
@@ -10,9 +14,9 @@ kotlin {
     iosSimulatorArm64()
 
     swiftPMDependencies {
-        iosDeploymentVersion.set("16.0")
+        iosMinimumDeploymentTarget.set("16.0")
 
-        `package`(
+        swiftPackage(
             url = url("https://github.com/lukaskubanek/LoremIpsum.git"),
             version = from(libs.versions.spm.loremIpsum.get()),
             products = listOf(product("LoremIpsum")),

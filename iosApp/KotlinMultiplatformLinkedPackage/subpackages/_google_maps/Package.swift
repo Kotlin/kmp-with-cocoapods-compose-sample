@@ -3,20 +3,20 @@ import PackageDescription
 let package = Package(
   name: "_google_maps",
   platforms: [
-    .iOS("16.0"),
+    .iOS("16.0")
   ],
   products: [
-      .library(
-          name: "_google_maps",
-          type: .none,
-          targets: ["_google_maps"]
-      ),
+    .library(
+      name: "_google_maps",
+      type: .none,
+      targets: ["_google_maps"]
+    )
   ],
   dependencies: [
     .package(
       url: "https://github.com/googlemaps/ios-maps-sdk.git",
-      exact: "10.6.0",
-    ),
+      exact: "10.6.0"
+    )
   ],
   targets: [
     .target(
@@ -24,9 +24,9 @@ let package = Package(
       dependencies: [
         .product(
           name: "GoogleMaps",
-          package: "ios-maps-sdk",
-        ),
+          package: "ios-maps-sdk"
+        )
       ]
-    ),
+    )
   ]
 )

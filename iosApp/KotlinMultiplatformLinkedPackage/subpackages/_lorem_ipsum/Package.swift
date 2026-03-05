@@ -3,20 +3,20 @@ import PackageDescription
 let package = Package(
   name: "_lorem_ipsum",
   platforms: [
-    .iOS("16.0"),
+    .iOS("16.0")
   ],
   products: [
-      .library(
-          name: "_lorem_ipsum",
-          type: .none,
-          targets: ["_lorem_ipsum"]
-      ),
+    .library(
+      name: "_lorem_ipsum",
+      type: .none,
+      targets: ["_lorem_ipsum"]
+    )
   ],
   dependencies: [
     .package(
       url: "https://github.com/lukaskubanek/LoremIpsum.git",
-      from: "2.0.1",
-    ),
+      from: "2.0.1"
+    )
   ],
   targets: [
     .target(
@@ -24,9 +24,9 @@ let package = Package(
       dependencies: [
         .product(
           name: "LoremIpsum",
-          package: "LoremIpsum",
-        ),
+          package: "LoremIpsum"
+        )
       ]
-    ),
+    )
   ]
 )
