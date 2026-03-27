@@ -1,10 +1,10 @@
 PODS:
   - composeApp (1.0-SNAPSHOT):
-    - GoogleMaps (= 10.0.0)
+    - GoogleMaps (= 10.3.0)
     - LoremIpsum (= 1.0)
-  - GoogleMaps (10.0.0):
-    - GoogleMaps/Maps (= 10.0.0)
-  - GoogleMaps/Maps (10.0.0)
+  - GoogleMaps (10.3.0):
+    - GoogleMaps/Maps (= 10.3.0)
+  - GoogleMaps/Maps (10.3.0)
   - LoremIpsum (1.0.0)
 
 DEPENDENCIES:
@@ -20,8 +20,8 @@ EXTERNAL SOURCES:
     :path: "../composeApp"
 
 SPEC CHECKSUMS:
-  composeApp: 7f4542e4f3846deb6134b31d281ec4c93e04a24b
-  GoogleMaps: 9ce9c898074e96655acaf1ba5d6f85991ecee7a3
+  composeApp: 78f734bed759b657975c0f9c9c5686c3efc7210c
+  GoogleMaps: 197af8911284ddf36db063c74faee4c4ab15e9d9
   LoremIpsum: 9029c55d36501b2ee0b05cc9ecda11d3a0479160
 
 PODFILE CHECKSUM: 4cd416da3d21d86625a8d4558f1d10d6a1c5e370
