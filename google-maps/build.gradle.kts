@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "org.jetbrains.kotlin.google-maps"
@@ -10,21 +9,25 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
-    cocoapods {
-        summary = "Kotlin maps module with cocoapods dependencies"
-        ios.deploymentTarget = "16.6"
+    swiftPMDependencies {
+        iosMinimumDeploymentTarget = "16.0"
 
-        // We don't need a podspec for a module dependency
-        noPodspec()
-
-        pod("GoogleMaps") {
-            version = libs.versions.cocoapods.googleMaps.get()
-        }
+        // Google Maps
+        swiftPackage(
+            url = "https://github.com/googlemaps/ios-maps-sdk",
+            version = "10.3.0",
+            products = listOf("GoogleMaps"),
+            importedClangModules = listOf("GoogleMaps"),
+        )
     }
 
     sourceSets.all {
         languageSettings {
             optIn("kotlinx.cinterop.ExperimentalForeignApi")
         }
+    }
+
+    compilerOptions {
+        optIn.add("kotlinx.cinterop.ExperimentalForeignApi")
     }
 }

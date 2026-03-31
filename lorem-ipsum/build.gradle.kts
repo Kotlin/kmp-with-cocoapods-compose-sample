@@ -1,6 +1,5 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "org.jetbrains.kotlin.lorem-ipsum"
@@ -10,21 +9,25 @@ kotlin {
     iosArm64()
     iosSimulatorArm64()
 
-    cocoapods {
-        summary = "Kotlin lorem-ipsum module with cocoapods dependencies"
-        ios.deploymentTarget = "16.6"
+    swiftPMDependencies {
+        iosMinimumDeploymentTarget = "16.0"
 
-        // We don't need a podspec for a module dependency
-        noPodspec()
-
-        pod("LoremIpsum") {
-            version = libs.versions.cocoapods.loremIpsum.get()
-        }
+        // LoremIpsum
+        swiftPackage(
+            url = "https://github.com/lukaskubanek/LoremIpsum",
+            version = "2.0.0",
+            products = listOf("LoremIpsum"),
+            importedClangModules = listOf("LoremIpsum"),
+        )
     }
 
     sourceSets.all {
         languageSettings {
             optIn("kotlinx.cinterop.ExperimentalForeignApi")
         }
+    }
+
+    compilerOptions {
+        optIn.add("kotlinx.cinterop.ExperimentalForeignApi")
     }
 }

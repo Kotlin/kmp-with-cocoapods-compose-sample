@@ -1,6 +1,6 @@
 package org.jetbrains.kotlin.lorem
 
-import cocoapods.LoremIpsum.LoremIpsum
+import swiftPMImport.org.jetbrains.kotlin.lorem.ipsum.lorem.ipsum.LoremIpsum
 
 class Ipsum {
 

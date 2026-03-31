@@ -2,42 +2,37 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "org.jetbrains.kotlin.compose.sample"
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    iosArm64()
-    iosSimulatorArm64()
-
-    cocoapods {
-        summary = "Kotlin sample project with CocoaPods Compose dependencies"
-        homepage = "https://github.com/Kotlin/kotlin-with-cocoapods-compose-sample"
-
-        podfile = project.file("../iosApp/Podfile")
-
-        ios.deploymentTarget = "16.6"
-
-        /*
-         * https://youtrack.jetbrains.com/issue/KT-41830/
-         * Only link against pods the library (lorem-ipsum and google-maps) depends on.
-         */
-        pod("LoremIpsum") {
-            version = libs.versions.cocoapods.loremIpsum.get()
-            linkOnly = true
-        }
-
-        pod("GoogleMaps") {
-            version = libs.versions.cocoapods.googleMaps.get()
-            linkOnly = true
-        }
-
-        framework {
+    listOf(iosArm64(), iosSimulatorArm64()).forEach { target ->
+        target.binaries.framework {
             baseName = "ComposeApp"
             isStatic = true
         }
+    }
+
+    swiftPMDependencies {
+        iosMinimumDeploymentTarget = "16.0"
+
+        // Google Maps
+        swiftPackage(
+            url = "https://github.com/googlemaps/ios-maps-sdk",
+            version = "10.3.0",
+            products = listOf("GoogleMaps"),
+            importedClangModules = listOf("GoogleMaps"),
+        )
+
+        // LoremIpsum
+        swiftPackage(
+            url = "https://github.com/lukaskubanek/LoremIpsum",
+            version = "2.0.0",
+            products = listOf("LoremIpsum"),
+            importedClangModules = listOf("LoremIpsum"),
+        )
     }
 
     sourceSets {
@@ -57,6 +52,10 @@ kotlin {
                 optIn("kotlinx.cinterop.ExperimentalForeignApi")
             }
         }
+    }
+
+    compilerOptions {
+        optIn.add("kotlinx.cinterop.ExperimentalForeignApi")
     }
 }
 
