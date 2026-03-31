@@ -1,0 +1,24 @@
+{
+  "originHash" : "dce1d79add42adc52d7e264a9896ddd89a581b79d7c84fa8af22d89f099a9475",
+  "pins" : [
+    {
+      "identity" : "ios-maps-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googlemaps/ios-maps-sdk.git",
+      "state" : {
+        "revision" : "037b29b55ee9ac4d93b6a686b292e75ba4c50fe5",
+        "version" : "10.10.0"
+      }
+    },
+    {
+      "identity" : "loremipsum",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lukaskubanek/LoremIpsum.git",
+      "state" : {
+        "revision" : "3c739014fd11bcf0a3b2263b95b89d12f1257579",
+        "version" : "2.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}
