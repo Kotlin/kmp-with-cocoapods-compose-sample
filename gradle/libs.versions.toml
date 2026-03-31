@@ -1,7 +1,7 @@
 [versions]
 compose-multiplatform = "1.10.3"
 kotlin = "2.3.20"
-cocoapods-LoremIpsum = "1.0"
+cocoapods-LoremIpsum = "2.0.0"
 cocoapods-GoogleMaps = "10.3.0"
 
 [plugins]

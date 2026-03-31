@@ -7,9 +7,14 @@ xcuserdata
 local.properties
 .idea
 .DS_Store
+.envrc
 captures
 .externalNativeBuild
 .cxx
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+**/.swiftpm/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/

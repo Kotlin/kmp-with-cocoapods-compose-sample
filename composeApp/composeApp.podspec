@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
     spec.libraries                = 'c++'
     spec.ios.deployment_target    = '16.6'
     spec.dependency 'GoogleMaps', '10.3.0'
-    spec.dependency 'LoremIpsum', '1.0'
+    spec.dependency 'LoremIpsum', '2.0.0'
     if !Dir.exist?('build/cocoapods/framework/ComposeApp.framework') || Dir.empty?('build/cocoapods/framework/ComposeApp.framework')
         raise "
         Kotlin framework 'ComposeApp' doesn't exist yet, so a proper Xcode project can't be generated.

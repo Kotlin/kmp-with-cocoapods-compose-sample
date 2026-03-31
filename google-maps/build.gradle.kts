@@ -19,7 +19,6 @@ kotlin {
 
         pod("GoogleMaps") {
             version = libs.versions.cocoapods.googleMaps.get()
-            extraOpts += listOf("-compiler-option", "-fmodules")
         }
     }
 
