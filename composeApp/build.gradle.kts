@@ -25,12 +25,12 @@ kotlin {
          * Only link against pods the library (lorem-ipsum and google-maps) depends on.
          */
         pod("LoremIpsum") {
-            version = libs.versions.cocoapods.loremIpsum.get()
+            version = libs.versions.cocoapods.lorem.ipsum.get()
             linkOnly = true
         }
 
         pod("GoogleMaps") {
-            version = libs.versions.cocoapods.googleMaps.get()
+            version = libs.versions.cocoapods.google.maps.get()
             linkOnly = true
         }
 

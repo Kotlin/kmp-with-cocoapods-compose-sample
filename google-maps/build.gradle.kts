@@ -18,7 +18,7 @@ kotlin {
         noPodspec()
 
         pod("GoogleMaps") {
-            version = libs.versions.cocoapods.googleMaps.get()
+            version = libs.versions.cocoapods.google.maps.get()
         }
     }
 
