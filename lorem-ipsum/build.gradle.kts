@@ -18,7 +18,7 @@ kotlin {
 
         swiftPackage(
             url = url("https://github.com/lukaskubanek/LoremIpsum.git"),
-            version = from(libs.versions.spm.loremIpsum.get()),
+            version = from(libs.versions.spm.lorem.ipsum.get()),
             products = listOf(product("LoremIpsum")),
         )
     }
