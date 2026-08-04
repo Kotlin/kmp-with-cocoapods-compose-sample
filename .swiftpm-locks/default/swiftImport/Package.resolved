@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "ios-maps-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/googlemaps/ios-maps-sdk",
+      "state" : {
+        "revision" : "a951b24ac0ca7720f87d4be3d5bd539552d13882",
+        "version" : "10.15.0"
+      }
+    },
+    {
+      "identity" : "loremipsum",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lukaskubanek/LoremIpsum",
+      "state" : {
+        "revision" : "3c739014fd11bcf0a3b2263b95b89d12f1257579",
+        "version" : "2.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
