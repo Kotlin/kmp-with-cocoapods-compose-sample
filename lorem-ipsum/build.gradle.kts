@@ -18,7 +18,7 @@ kotlin {
         noPodspec()
 
         pod("LoremIpsum") {
-            version = libs.versions.cocoapods.loremIpsum.get()
+            version = libs.versions.cocoapods.lorem.ipsum.get()
         }
     }
 

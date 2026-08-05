@@ -1,8 +1,8 @@
 [versions]
+cocoapods-google-maps = "10.3.0"
+cocoapods-lorem-ipsum = "2.0.0"
 compose-multiplatform = "1.10.3"
 kotlin = "2.3.20"
-cocoapods-LoremIpsum = "2.0.0"
-cocoapods-GoogleMaps = "10.3.0"
 
 [plugins]
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
